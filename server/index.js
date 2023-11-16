@@ -49,19 +49,19 @@ app.put('/update', async (req, res) => {
     }
 })
 
-// app.delete('/delete/:id', async (req, res) => {
-//     const { id } = req.params;
+app.delete('/delete/:id', async (req, res) => {
+    const { id } = req.params;
 
-//     try {
-//         await FoodModel.findByIdAndDelete(id);
-//         const updatedList = await FoodModel.find({});
-//         res.send(updatedList);
+    try {
+        await FoodModel.findByIdAndDelete(id);
+        const updatedList = await FoodModel.find({});
+        res.send(updatedList);
 
 
-//     } catch (error) {
-//         console.log(error);
-//     }
-// })
+    } catch (error) {
+        console.log(error);
+    }
+})
 
 app.get('/read', async (req, res) => {
     try {
